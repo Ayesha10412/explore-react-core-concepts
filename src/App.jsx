@@ -2,17 +2,38 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Todo from './Todo'
 
 function App() {
 
 
   return (
     <>
+    <h1>Vite+React</h1>
+    <Device name="Laptop" price="55000"></Device>
+    <Device name="mobile" ></Device>
+
      <Person></Person>
-     <Student></Student>
+     <Student  name="Bristi"  ></Student>
+     <Student name="Bristi" age="22"></Student>
+
      <Developer></Developer>
+     <Todo task="Learn React" 
+     isDone={true}></Todo>
+     
+     <Todo task="Explore React"
+      isDone={false}></Todo>
+
+     <Todo task="Try JSX" 
+     isDone={true}></Todo>
+
     </>
   )
+}
+
+function Device(props){
+  console.log(props)
+  return <h2>This device: {props.name}</h2>
 }
 
 function Person(){
@@ -26,11 +47,19 @@ function Person(){
   )
 }
 
-function Student(){
+// function Student(props){
+//   return(
+//     <div className='student'>
+//       <p>Name: {props.name}</p>
+//       <p>Age: {props.age} </p>
+//     </div>
+//   )
+// }
+function Student({name,age="34"}){
   return(
     <div className='student'>
-      <p>Name:</p>
-      <p>Age:</p>
+      <p>Name: {name}</p>
+      <p>Age: {age} </p>
     </div>
   )
 }

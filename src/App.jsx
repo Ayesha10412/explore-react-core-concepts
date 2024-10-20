@@ -3,13 +3,29 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './Todo'
+import Actor from './Actor'
+import Singer from './Singer'
 
 function App() {
+const actors= ['Alex', 'Dsouza', 'Maria','Clinton']
 
+const singers=[
+  {id: 1, name:'Dr. Mahfujur Rahman', age: 58},
+  {id: 2,name:'pritom', age: 28},
+  {id: 3, name:'Kanok Chapa', age: 48},
+  {id: 4,name:'Runa Laila', age: 68},
+
+]
 
   return (
     <>
     <h1>Vite+React</h1>
+
+{
+  singers.map(singer=>  <Singer singer={singer} ></Singer>)
+}
+
+
     <Device name="Laptop" price="55000"></Device>
     <Device name="mobile" ></Device>
 
@@ -20,12 +36,18 @@ function App() {
      <Developer></Developer>
      <Todo task="Learn React" 
      isDone={true}></Todo>
-     
+
      <Todo task="Explore React"
       isDone={false}></Todo>
 
      <Todo task="Try JSX" 
      isDone={true}></Todo>
+
+     <Actor name="AYESHA"></Actor>
+     {
+      actors.map(actor=>
+      <Actor name={actor}></Actor>)
+     }
 
     </>
   )

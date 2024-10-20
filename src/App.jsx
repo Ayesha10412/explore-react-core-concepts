@@ -5,6 +5,7 @@ import './App.css'
 import Todo from './Todo'
 import Actor from './Actor'
 import Singer from './Singer'
+import Book from './Book'
 
 function App() {
 const actors= ['Alex', 'Dsouza', 'Maria','Clinton']
@@ -17,6 +18,13 @@ const singers=[
 
 ]
 
+const books=[
+  {id:1, name:'Physics'},
+  {id:2, name:'Biology'},
+  {id:3, name:'Math'},
+
+]
+
   return (
     <>
     <h1>Vite+React</h1>
@@ -24,7 +32,15 @@ const singers=[
 {
   singers.map(singer=>  <Singer singer={singer} ></Singer>)
 }
+<h3>Books: {books.length}</h3>
 
+
+{
+
+  books.map(book=> 
+
+  <Book book={book}></Book>)
+}
 
     <Device name="Laptop" price="55000"></Device>
     <Device name="mobile" ></Device>
